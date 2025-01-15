@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-cartoon_characters-episode-table
+      author: vlad_a
+      changes:
+        createTable:
+          tableName: cartoon_characters-episode
+          columns:
+            - column:
+                name: episode_id
+                type: bigint
+                constraints:
+                  nullable: false
+                  foreignKeyName: fk_episode
+                  referencedTableName: episodes
+                  referenceColumnName: id
+            - column:
+                name: episode_url
+                type: varchar(255)
+                constraints:
+                  referencedTableName: episodes
+                  referencedColumnName: url
+                  unique: true
+            - column:
+                name: character_id
+                type: bigint
+                constraints:
+                  nullable: false
+                  foreignKeyName: fk_cartoon_character
+                  referencedTableName: cartoon_characters
+                  referenceColumnName: id
+            - column:
+                name: character_url
+                type: varchar(255)
+                constraints:
+                  referencedTableName: cartoon_characters
+                  referenceColumnName: url
+                  unique: true

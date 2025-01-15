@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-cartoon_characters_location-table
+      author: vlad_a
+      changes:
+        createTable:
+          tableName: cartoon_characters_location
+          columns:
+            - column:
+                name: location_id
+                type: bigint
+                constraints:
+                  nullable: false
+                  foreignKeyName: fk_location
+                  referencedTableName: locations
+                  referenceColumnName: id
+            - column:
+                name: location_name
+                type: varchar(255)
+                constraints:
+                  referencedTableName: locations
+                  referencedColumnName: name
+            - column:
+                name: location_url
+                type: varchar(255)
+                constraints:
+                  referencedTableName: locations
+                  referencedColumnName: url
+                  unique: true
+            - column:
+                name: character_id
+                type: bigint
+                constraints:
+                  nullable: false
+                  foreignKeyName: fk_cartoon_character
+                  referencedTableName: cartoon_characters
+                  referenceColumnName: id
+            - column:
+                name: character_url
+                type: varchar(255)
+                constraints:
+                  referencedTableName: cartoon_characters
+                  referenceColumnName: url
+                  unique: true

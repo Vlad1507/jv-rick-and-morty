@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-episode-table
+      author: vlad_a
+      changes:
+        createTable:
+          tableName: episodes
+          columns:
+            - column:
+                name: id
+                type: bigint
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: name
+                type: varchar(255)
+            - column:
+                name: air_date
+                type: varchar(255)
+                constraints:
+                  nullable: false
+            - column:
+                name: episode_code
+                type: varchar(255)
+                constraints:
+                  nullable: false
+            - column:
+                name: episode_url
+                type: varchar(255)
+            - column:
+                name: created_date
+                type: varchar(255)

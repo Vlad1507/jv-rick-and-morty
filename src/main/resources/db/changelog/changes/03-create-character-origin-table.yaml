@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-character-origin-table
+      author: vlad_a
+      changes:
+        createTable:
+          tableName: character_origin
+          columns:
+            - column:
+                name: id
+                type: bigint
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: name
+                type: varchar(255)
+            - column:
+                name: origin_url
+                type: varchar(255)

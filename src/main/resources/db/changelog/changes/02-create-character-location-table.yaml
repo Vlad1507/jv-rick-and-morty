@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-character-location-table
+      author: vlad_a
+      changes:
+        createTable:
+          tableName: locations
+          columns:
+            - column:
+                name: id
+                type: bigint
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: name
+                type: varchar(255)
+            - column:
+                name: type
+                type: varchar(255)
+            - column:
+                name: dimension
+                type: varchar(255)
+            - column:
+                name: location_url
+                type: varchar(255)
+            - column:
+                name: created_date
+                type: varchar(255)
