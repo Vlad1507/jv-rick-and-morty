@@ -6,7 +6,7 @@ import mate.academy.rickandmorty.dto.internal.cartoon.CartoonCharacterDto;
 import mate.academy.rickandmorty.model.CartoonCharacter;
 import org.mapstruct.Mapper;
 
-@Mapper(config = AppConfig.class) //add uses if need
+@Mapper(config = AppConfig.class)
 public interface CharacterMapper {
 
     CartoonCharacterDto toDto(CartoonCharacter character);

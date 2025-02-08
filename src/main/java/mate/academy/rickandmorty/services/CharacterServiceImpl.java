@@ -5,7 +5,6 @@ import java.util.Random;
 import lombok.RequiredArgsConstructor;
 import mate.academy.rickandmorty.dto.internal.cartoon.CartoonCharacterDto;
 import mate.academy.rickandmorty.dto.internal.cartoon.CartoonCharacterSearchDto;
-import mate.academy.rickandmorty.exception.EntityNotFoundException;
 import mate.academy.rickandmorty.mapper.CharacterMapper;
 import mate.academy.rickandmorty.model.CartoonCharacter;
 import mate.academy.rickandmorty.repository.SpecificationBuilder;
@@ -24,14 +23,6 @@ public class CharacterServiceImpl implements CharacterService {
     @Override
     public void save(CartoonCharacter cartoonCharacter) {
         characterRepository.save(cartoonCharacter);
-    }
-
-    @Override
-    public CartoonCharacterDto findById(Long id) {
-        CartoonCharacter cartoonCharacter = characterRepository.findById(id).orElseThrow(
-                () -> new EntityNotFoundException("Can't find character by id: " + id)
-        );
-        return characterMapper.toDto(cartoonCharacter);
     }
 
     @Override

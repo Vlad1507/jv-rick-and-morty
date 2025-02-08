@@ -18,6 +18,7 @@ databaseChangeLog:
                 type: varchar(255)
                 constraints:
                   nullable: false
+                  unique: true
             - column:
                 name: name
                 type: varchar(255)
@@ -27,41 +28,10 @@ databaseChangeLog:
                 constraints:
                   nullable: false
             - column:
-                name: species
-                type: varchar(255)
-                constraints:
-                  nullable: false
-            - column:
-                name: type
-                type: varchar(255)
-                constraints:
-                  nullable: false
-            - column:
                 name: gender
                 type: varchar(255)
                 constraints:
                   nullable: false
-            - column:
-                name: origin_name
-                type: varchar(255)
-                constraints:
-                  foreignKeyName: fk_origin
-                  reference: character_origin(name)
-            - column:
-                name: location_name
-                type: varchar(255)
-                constraints:
-                  foreignKeyName: fk_location
-                  reference: locations(name)
-            - column:
-                name: image
-                type: varchar(255)
-            - column:
-                name: character_url
-                type: varchar(255)
-            - column:
-                name: created_date
-                type: varchar(255)
             - column:
                 name: is_deleted
                 type: boolean
